@@ -1,0 +1,204 @@
+@charset "utf-8"; /*使其不成為亂碼*/
+
+/* syntex
+selector{atteibute: value;}
+/*視窗背景色設定 (element selecter, background color)*/
+
+
+body {
+    background-image:url(../img/back000.jpg) , linear-gradient(to top, #ebbba7 0%, #cfc7f8 100%);
+    background-repeat: repeat-x;
+    background-size:100%;
+}
+
+/*連結顏色設定 (referencee color) */
+
+a{
+    color: 		#CD5C5C;
+}
+/* ":" pseudo class: hover, visited, active, focus */
+a:hover {
+    color:dimgrey;
+    text-decoration: none; /* 字的裝飾顏色*/
+}
+
+/*首頁,導覽,頁尾的共通設定*/
+
+header,nav,footer{
+    text-align: center;
+}
+
+
+/*導覽樣式設定*/
+ul.menu li {
+  list-style-type: none; /* remove . */
+  display: list-item; /* block(v), inline-block, inline, list-item, table, table-cell, none*/
+  width: 200px;
+  margin: 15px  20px;
+}
+
+ul.menu a {
+  display: block;
+  padding: 10px;
+  background-image: linear-gradient(to bottom,#e2b3a3,#BC8F8F);
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+    font-size: 120%;  
+}
+ul.menu a:hover {
+  background-image: linear-gradient(to bottom,#e9ceb9,#cbba90);
+}
+
+/*頁面標題設定 (title color)*/
+
+h1{
+    width: 30%;
+    margin: 110px auto;
+    border: 2px solid 	#cbba90; 
+    padding: 30px;
+    background-size:cover;
+    background-color: 	#BC8F8F;
+    color: 	#FFF;
+    font-size: 300%;
+    border-radius: 45%;
+    text-shadow: 1px 2px 2px 		#704214;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+    font-size: 300%;
+    text-align: center;
+    line-height: 1;
+    font-family: 'cwTeXFangSong', serif;
+    font-weight: 800;
+}
+
+
+
+
+
+/*內容區塊邊框設定*/
+#contents {
+    float: right;
+    width:60%;
+    margin: 0px 40px;
+    padding: 60px 80px;
+    border: 3px ridge #e9ceb9;
+    /*margin: 40px;
+    padding: 40px 80px;*/
+    background: 
+        url(../img/back01.png) right top no-repeat,
+        url(../img/back03.png) left top no-repeat;
+        
+    background-color: 		#F5F5F5;
+}
+
+#left {
+    float:left;
+    
+}
+
+
+#editor {
+    float:left;
+    width: 19%;
+    padding:15px 20px;
+    border: 2px ridge #e9ceb9;
+    background-color:#F5F5F5;
+    
+}
+
+
+
+/*次標題設定 (subtitle color)*/
+
+h2{
+    text-align: center;
+    margin-left:auto;
+    border: 3px double 	#D2B48C;  /*標題框線*/
+    border-left: 15px groove #CCB38C;  /*標題前頭*/
+    padding: 10px; /*內部跟字的空間*/
+    color: 	#4D3900;   
+    border-radius: 5px 0px 0px 5px;
+}
+
+P {
+    color:   #4D3900
+}  
+/*小標題設定*/
+.h-sub {
+  padding: 10px;
+  background-image: linear-gradient(to bottom,#e9ceb9,#cbba90);;
+  color: #4D3900;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 2px #FDF5E6 inset;
+}
+.h-sub span{
+  font-weight: normal;
+}
+
+
+/*元素>選擇器*/
+.h-sub span{
+    font-weight: normal;
+}
+
+
+/*更多介紹 連結設定*/
+.more{
+    text-align: right;
+}
+.more::after {
+  content: url(../img/ico_arrow.png);
+  margin-left: 3px;
+  vertical-align: middle;
+}
+
+/*連結圖示設定: attribute selector
+再會另開視窗的連結加上對應圖
+ "::": pseudo element -> embed in some contents */
+a[target="_blank"]::after {
+  content: url(../img/ico_blank.png);
+  margin-left: 5px;
+  vertical-align: middle;
+}
+/*再電子郵件的連結加上對應圖  */
+
+a[href^="mailto:"]::after {
+  content:url(../img/ico_mail.png) ;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+/*區塊間分隔:
+1. section + section: adjacent selector to select the "section" (last one) next to the "section" (first one)
+2. ">" : child selector to select child element beneath the father element only (avoid the grand child section: 2 cats section)*/
+
+contents > section + section {
+  margin-top: 80px;
+}
+
+/*文繞圖設定*/
+.imgL {
+  float: left;
+  margin-right: 20px;
+}
+.imgR {
+  float: right;
+  margin-left: 20px;
+}
+.clear {
+  clear: both;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*圓形圖片設定*/
+
+.img-round {
+  border-radius: 30%;
+}
+
+
